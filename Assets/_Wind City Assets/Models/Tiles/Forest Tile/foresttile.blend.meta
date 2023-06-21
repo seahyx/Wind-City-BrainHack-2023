@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 6b7048a39a09543a9bb27f328090b988
+guid: fe31e20530a1a41449c5d36a66f22e85
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: 30191da9f9c9ea2479d9c0658e02fec7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves
+    second: {fileID: 2100000, guid: 83a8f6859ef6c31499d0dd84b0b5167b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock
+    second: {fileID: 2100000, guid: 77612b0fe6c64fb4aa4821cc0293dc9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile
+    second: {fileID: 2100000, guid: f6e9696cb9c98d64ca7663bf6ce5eefe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk
+    second: {fileID: 2100000, guid: a131aeed733ae284f8f07a57c137ad25, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
