@@ -18,7 +18,7 @@ public class LevelGenerator : MonoBehaviour
 
     [Header("Map Generation")]
     [SerializeField]
-    private Texture2D map = Texture2D.whiteTexture;
+    private Texture2D map;
     [SerializeField]
     private Color cityTileCol = Color.grey;
     [SerializeField]
@@ -73,6 +73,6 @@ public class LevelGenerator : MonoBehaviour
 
     private Vector3 GetTilePosition(int x, int y, int width, int height, float tileScale, Vector3 offset)
 	{
-        return offset + new Vector3((x - (width / 2)) * tileScale, (y - (height / 2)) * tileScale);
+        return offset + new Vector3((x - (width / 2)) * tileScale, 0, (y - (height / 2)) * tileScale);
 	}
 }
