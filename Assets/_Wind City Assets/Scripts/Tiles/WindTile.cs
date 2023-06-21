@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindTile : Tiles, ProducerIF
+public class WindTile : Tiles, Producer
 {
     public GameObject model;
     public int tileID;

@@ -8,7 +8,7 @@ public enum ConsType
     City,
 }
 
-public interface ConsumerIF : MonoBehaviour
+public interface ConsumerIF
 {
     [SerializeField]
     protected Vector2 position = Vector2.zero;
