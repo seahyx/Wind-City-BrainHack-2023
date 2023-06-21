@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RiverTile : Tiles, Environment
+public class RiverTile : EnvironmentTile
 {
     public GameObject model;
     public int tileID;

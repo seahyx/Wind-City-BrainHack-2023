@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatteryTile : Tiles, Producer
+public class BatteryTile : ProducerTile
 {
     public GameObject model;
     public int tileID;
