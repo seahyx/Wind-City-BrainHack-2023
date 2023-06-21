@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForestTile : Tiles, EnvironmentIF
+public class ForestTile : Tiles, Environment
 {
     public GameObject model;
     public int tileID;

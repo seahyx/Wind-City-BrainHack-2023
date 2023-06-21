@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlainsTile :   Tiles, EnvironmentIF
+public class PlainsTile :   Tiles, Environment
 {
     public GameObject model;
     public int tileID;

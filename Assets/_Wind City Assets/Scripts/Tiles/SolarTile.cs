@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SolarTile : Tiles, ProducerIF
+public class SolarTile : Tiles, Producer
 {
     public GameObject model;
     public int tileID;

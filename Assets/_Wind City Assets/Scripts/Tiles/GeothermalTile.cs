@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GeothermalTile : Tiles, ProducerIF
+public class GeothermalTile : Tiles, Producer
 {
     public GameObject model;
     public int tileID;
