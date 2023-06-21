@@ -1,25 +1,21 @@
-//hi
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Tile {
-    private int x;
-    private int y;
-    private string type;
+public class Tiles : MonoBehaviour
+{
+    [SerializeField]
+    protected Vector2 position = Vector2.zero;
+    [SerializeField, Range(0.0f, 100.0f)]
+    protected float environmentalCost = 0.0f;
 
-    public Tile(int x, int y, string type) {
-        this.x = x;
-        this.y = y;
-        this.type = type;
+	void Start()
+    {
+        
     }
 
-    public int GetX() {
-        return x;
-    }
-
-    public int GetY() {
-        return y;
-    }
-
-    public string GetType() {
-        return type;
+    void Update()
+    {
+        
     }
 }
