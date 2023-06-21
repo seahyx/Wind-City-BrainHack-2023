@@ -6,13 +6,13 @@ public class LevelGenerator : MonoBehaviour
 {
     [Header("Tile Prefabs")]
     [SerializeField]
-    private List<Tile> forestTiles = new List<Tile>();
+    private List<EnvironmentTile> forestTiles = new List<EnvironmentTile>();
     [SerializeField]
-    private List<Tile> plainsTiles = new List<Tile>();
+    private List<EnvironmentTile> plainsTiles = new List<EnvironmentTile>();
     [SerializeField]
-    private List<Tile> cityTiles = new List<Tile>();
+    private List<ConsumerTile> cityTiles = new List<ConsumerTile>();
     [SerializeField]
-    private List<Tile> riverTiles = new List<Tile>();
+    private List<EnvironmentTile> riverTiles = new List<EnvironmentTile>();
     [SerializeField]
     private Tile errorTile;
 

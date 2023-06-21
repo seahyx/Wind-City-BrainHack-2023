@@ -2,5 +2,6 @@ public enum TileSubtype
 {
     Producer,
     Consumer,
-    Environment
+    Environment,
+    Error
 }
