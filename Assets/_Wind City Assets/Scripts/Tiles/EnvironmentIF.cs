@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tiles : MonoBehaviour
+public class Tile : MonoBehaviour
 {
     [SerializeField]
     protected Vector2 position = Vector2.zero;
