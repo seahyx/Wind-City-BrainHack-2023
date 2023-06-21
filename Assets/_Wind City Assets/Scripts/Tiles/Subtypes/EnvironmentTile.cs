@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EnvironmentTile : Tile
 {
-    
+	public override TileSubtype tileSubtype { get; protected set; } = TileSubtype.Environment;
 }
