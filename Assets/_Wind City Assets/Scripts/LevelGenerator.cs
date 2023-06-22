@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -30,14 +31,26 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private Transform parent;
     [SerializeField]
-    private float tileScale = 0.2f;
+    public float tileScale = 0.2f;
+    [SerializeField]
+    public int randomSeed = 1005966;
+
+    [Header("Events")]
+    [SerializeField]
+    private UnityEvent onLevelGenerate = new UnityEvent();
+
+    public int width => map.width;
+    public int height => map.height;
 
     public List<List<Tile>> GenerateLevel()
 	{
         List<List<Tile>> levelGrid = new List<List<Tile>>();
         int width = map.width;
-        int height = map.width;
-        for (int y = 0; y < width; y++)
+        int height = map.height;
+
+        Random.InitState(randomSeed);
+
+        for (int y = 0; y < height; y++)
         {
             List<Tile> row = new List<Tile>();
             for (int x = 0; x < width; x++)
@@ -59,20 +72,37 @@ public class LevelGenerator : MonoBehaviour
                 } else {
                     newTile = Instantiate(errorTile, parent);
                 }
-
-                newTile.transform.position = GetTilePosition(x, y, width, height, tileScale, Vector3.zero);
+                newTile.x = x;
+                newTile.y = y;
+                newTile.transform.localPosition = GetTilePosition(x, y, width, height, tileScale, Vector3.zero);
                 newTile.transform.localScale = newTile.transform.localScale * tileScale;
-                row.Add(newTile);
+
+                // Randomize rotation
+                float randVal = Random.Range(0.0f, 4.0f);
+                if (randVal < 1.0f)
+                {
+                    newTile.transform.Rotate(new Vector3(0, 90));
+                } else if (randVal < 2.0f)
+				{
+					newTile.transform.Rotate(new Vector3(0, 180));
+				}
+				else if (randVal < 3.0f)
+				{
+					newTile.transform.Rotate(new Vector3(0, 270));
+				}
+
+				row.Add(newTile);
             }
             levelGrid.Add(row);
 		}
-        
+
+        onLevelGenerate.Invoke();
 
         return levelGrid;
     }
 
     private Vector3 GetTilePosition(int x, int y, int width, int height, float tileScale, Vector3 offset)
 	{
-        return offset + new Vector3((x - (width / 2)) * tileScale, 0, (y - (height / 2)) * tileScale);
+        return offset + new Vector3((x - ((width - 1) / 2.0f)) * tileScale, 0, (y - ((height - 1) / 2.0f)) * tileScale);
 	}
 }
